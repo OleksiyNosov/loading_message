@@ -11,12 +11,12 @@ bundle install
 
 ```rb
 # Your data
-elements = ['goldfish', 'tiger shark', 'hammerhead', crampfish]
+elements = ['goldfish', 'tiger shark', 'hammerhead', 'crampfish']
 
 loading_message = LoadingMessage.new \
   max: elements.count,
   message: 'Processing data:',
-  finish_message: "It is done"
+  finish_message: 'It is done'
 
 elements.each do |element|
   # Some processing
