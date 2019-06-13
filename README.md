@@ -30,7 +30,8 @@ loading_message.finish
 ## Hardcode load
 
 ```rb
-loading_message_url = 'https://raw.githubusercontent.com/OleksiyNosov/loading_message/master/lib/loading_message.rb'
+loading_message_url = \
+  'https://raw.githubusercontent.com/OleksiyNosov/loading_message/master/lib/loading_message.rb'
 
 puts `if [[ -f /tmp/loading_message ]]; then rm -r /tmp/loading_message fi`
 puts `mkdir /tmp/loading_message`
