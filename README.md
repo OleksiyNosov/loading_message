@@ -33,9 +33,7 @@ loading_message.finish
 loading_message_url = \
   'https://raw.githubusercontent.com/OleksiyNosov/loading_message/master/lib/loading_message.rb'
 
-`if [[ -d /tmp/loading_message ]]; then rm -r /tmp/loading_message; fi`
-`mkdir /tmp/loading_message`
-`output=(curl -o /tmp/loading_message/loading_message.rb #{ loading_message_url })`
+`curl --create-dirs -o /tmp/loading_message/loading_message.rb #{ loading_message_url }`
 
 require_relative '/tmp/loading_message/loading_message.rb'
 ```
