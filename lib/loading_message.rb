@@ -53,7 +53,7 @@ class LoadingMessage
   def time_took
     delta = finish_time - start_time
 
-    "Time: #{ delta } seconds."
+    "Time: #{ duration_distance(delta) }"
   end
 
   def started_at
@@ -66,5 +66,20 @@ class LoadingMessage
 
   def finish_time
     @finish_time ||= Time.now
+  end
+
+  def duration_distance delta
+    strict_delta = delta.to_i
+
+    hours = strict_delta / 3600
+    minutes_in_seconds = strict_delta - hours * 3600
+
+    minutes = minutes_in_seconds / 60
+    seconds = minutes_in_seconds - minutes * 60
+
+    miliseconds = (delta - strict_delta) * 1_000
+    microseconds = (delta - strict_delta) * 1_000_000 % 1_000
+
+    format('%02d:%02d:%02d.%03d.%03d', hours, minutes, seconds, miliseconds, microseconds)
   end
 end
