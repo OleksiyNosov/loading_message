@@ -90,7 +90,7 @@ class LoadingMessage
   end
 
   def finish_time
-    @finish_time ||= current_time
+    @finish_time ||= Time.now
   end
 
   def duration_distance delta
