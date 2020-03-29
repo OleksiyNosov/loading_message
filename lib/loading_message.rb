@@ -113,7 +113,7 @@ class LoadingLogger
   attr_reader :time, :filename, :path, :destination, :first_attempt
 
   def initialize(name, path: nil, time_postfix: true)
-    @time = time_postfix ? Time.now : nil
+    @time = time_postfix ? Time.now.to_i : nil
     @filename = "#{name}_#{time}.log"
     @path = path.to_s.gsub(/(?<=.)\/$/, '')
     @destination = [@path, filename].reject(&:empty?).join('/')
